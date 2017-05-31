@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ 'title.bookmark_view'|trans({'%id%': exampleId}) }}
+{% endblock %}
+
+{% block body %}
+    <h1>
+        {{ 'title.bookmark_view'|trans({'%id%': exampleId}) }}
+    </h1>
+    {% if example|length %}
+
+        <table>
+            <thead>
+            <tr>
+                <th>{{ 'example_table.title'|trans }}</th>
+                <th>{{ 'example_table.url'|trans }}</th>
+                <th>{{ 'example_table.tag'|trans }}</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    {{ example.title }}
+                </td>
+                <td>
+                    {{ example.url }}
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <a href="{{ url('example_index') }}" class="table__link table__link--detail"
+           title="{{ 'label.back_to_list'|trans }}">
+            {{ 'label.back_to_list'|trans }}
+        </a>
+        <a href="{{ url('example_edit', {'id': example.id}) }}" class="table__link" title="{{ 'label.edit'|trans }}">
+            {{ 'label.edit'|trans }}
+        </a>
+        <a href="{{ url('example_delete', {'id': example.id}) }}" class="table__link"
+           title="{{ 'label.delete'|trans }}">
+            {{ 'label.delete'|trans }}
+        </a>
+    {% else %}
+        <div>
+            {{ 'example_not_found'|trans }}
+        </div>
+    {% endif %}
+
+{% endblock %}

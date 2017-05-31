@@ -1,13 +1,8 @@
 # Silex - starting point
 
-* Silex Skeleton
-* Twig templates
+* Silex Skeleton with Twig templates
 * Paginator
-* Translations
-* Gulp
-  * Sass
-  * Autoprefixing
-  * BrowserSync
-  * Babel 
+* Translations (pl-en)
+* Gulpfile: BrowserSync, Sass, Babel
 * SMACSS
 * ES2015+
